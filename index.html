@@ -10,9 +10,14 @@
 
   <body>
     <div id="app">
-      <h1>titleh1</h1>
+      <h1>Hyrule Compendium</h1>
+      <div id="header">
+        <button v-on:click="showCreatures = !showCreatures">Creatures</button>
+        <button v-on:click="showEnemies = !showEnemies">Enemies</button>
+      </div>
+
       <div id="container">
-        <div class="item" v-for="item in zelda_creatures">
+        <div class="item" v-for="item in zelda_creatures" v-if="showCreatures">
           <img class="image" :src="item.image_url" />
           <div>
             <p>{{item.name}}</p>

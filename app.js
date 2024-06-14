@@ -3,6 +3,8 @@ Vue.createApp({
   data: function () {
     return {
       zelda_creatures: [],
+      showCreatures: false,
+      showEnemies: false,
     };
   },
   methods: {
