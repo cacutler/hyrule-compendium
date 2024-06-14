@@ -13,7 +13,10 @@ Vue.createApp({
                 console.log(data);
                 let creatures_data = data.data;
                 console.log(creatures_data);
-                this.zelda_creatures = {"image_url": creatures_data.image, "name": creatures_data.name, "id": creatures_data.id}
+                creatures_data.forEach((creature) => {
+                    console.log(creature);
+                    this.zelda_creatures.push({"image_url": creature.image, "name": creature.name, "id": creature.id});
+                });
                 console.log(this.zelda_creatures);
             } catch (error) {
                 console.error("Error catching creatures:", error);
