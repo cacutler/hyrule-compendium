@@ -7,7 +7,6 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Vue BoilerPlate</title>
   </head>
-
   <body>
     <div id="app">
       <h1>Hyrule Compendium</h1>
@@ -15,7 +14,6 @@
         <button v-on:click="showCreatures = !showCreatures">Creatures</button>
         <button   v-on:click="showEnemies = !showEnemies">Enemies</button>
       </div>
-
       <div id="container">
         <div class="item" v-for="item in zelda_creatures" v-if="showCreatures">
           <img class="image" :src="item.image_url" />
@@ -28,5 +26,4 @@
     </div>
     <script src="app.js"></script>
   </body>
-</html>
 </html>
