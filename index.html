@@ -11,11 +11,20 @@
     <div id="app">
       <h1>Hyrule Compendium</h1>
       <div id="header">
-        <button v-on:click="showCreatures = !showCreatures">Creatures</button>
-        <button v-on:click="showEnemies = !showEnemies">Enemies</button>
+        <button v-on:click="toggleMode('creatures')">Creatures</button>
+        <button v-on:click="toggleMode('monsters')">Enemies</button>
       </div>
       <div id="container">
         <div class="item" v-for="item in zelda_creatures" v-if="showCreatures">
+          <img class="image" :src="item.image_url">
+          <div>
+            <p>{{item.name}}</p>
+            <p>{{item.id}}</p>
+          </div>
+        </div>
+      </div>
+      <div id="container">
+        <div class="item" v-for="item in zelda_monsters" v-if="showEnemies">
           <img class="image" :src="item.image_url">
           <div>
             <p>{{item.name}}</p>

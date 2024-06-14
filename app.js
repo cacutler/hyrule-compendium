@@ -4,7 +4,8 @@ Vue.createApp({
         return {
             zelda_creatures: [],
             showCreatures: true,
-            showEnemies: false
+            showEnemies: false,
+            zelda_monsters: []
         }
     },
     methods: {
@@ -19,10 +20,33 @@ Vue.createApp({
             } catch (error) {
                 console.error("Error catching creatures:", error);
             }
+        },
+        getEnemies: async function () {
+            try {
+                let response = await fetch(`${URL}/monsters`);
+                let data = await response.json();
+                let monsters_data = data.data;
+                monsters_data.forEach((monster) => {
+                    this.zelda_monsters.push({image_url: monster.image, name: monster.name, id: monster.id});
+                });
+            } catch (error) {
+                console.error("Error catching creatures:", error);
+            }
+        },
+        toggleMode: function (type) {
+            if (type === "monsters") {
+                this.showEnemies = true;
+                this.showCreatures = false;
+            }
+            if (type === "creatures") {
+                this.showCreatures = true;
+                this.showEnemies = false;
+            }
         }
     },
     created: function () {
         console.log("app loaded");
         this.getCreatures();
+        this.getEnemies();
     }
 }).mount("#app");
