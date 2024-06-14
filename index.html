@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Vue BoilerPlate</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <title>Vue BoilerPlate</title>
-</head>
+  <body>
+    <div id="app">
+      <h1>Hyrule Compendium</h1>
+      <div id="header">
+        <button v-on:click="showCreatures = !showCreatures">Creatures</button>
+        <button   v-on:click="showEnemies = !showEnemies">Enemies</button>
+      </div>
 
-<body>
-  <div id="app">
-    <h1>titleh1</h1>
-    <div id="container">
-      <div class="item" v-for="item in zelda_creatures">
-        <img class="image" :src=item.image_url>
-        <div>
-          <p>{{item.name}}</p>
-          <p>{{item.id}}</p>
+      <div id="container">
+        <div class="item" v-for="item in zelda_creatures" v-if="showCreatures">
+          <img class="image" :src="item.image_url" />
+          <div>
+            <p>{{item.name}}</p>
+            <p>{{item.id}}</p>
+          </div>
         </div>
-        <!-- <p>{{item}}</p> -->
       </div>
     </div>
-
-  </div>
-  <script src="app.js"></script>
-</body>
-
+    <script src="app.js"></script>
+  </body>
+</html>
 </html>
