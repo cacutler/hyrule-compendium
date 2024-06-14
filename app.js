@@ -11,6 +11,8 @@ Vue.createApp({
                 let response = await fetch(`${URL}/creatures`);
                 let data = await response.json();
                 console.log(data);
+                let creatures_data = data.data;
+                console.log(creatures_data);
                 this.zelda_creatures = {"image_url": data.image, "name": data.name, "id": data.id}
                 console.log(this.zelda_creatures);
             } catch (error) {
