@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <title>Vue BoilerPlate</title>
-  </head>
-  <body>
-    <div id="app">
-        <h1>{{ titleh1 }}</h1>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <title>Vue BoilerPlate</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{ titleh1 }}</h1>
+    <div id="container">
+      <div v-for="item in zelda_creature">
+        <img src="item.image">
+        <div>
+          <p>item.name</p>
+          <p>item.id</p>
+        </div>
+      </div>
     </div>
-    <script src="app.js"></script>
-  </body>
+
+  </div>
+  <script src="app.js"></script>
+</body>
+
 </html>
