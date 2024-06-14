@@ -5,7 +5,7 @@ Vue.createApp({
             zelda_creatures: [],
             showCreatures: true,
             showEnemies: false
-        };
+        }
     },
     methods: {
         getCreatures: async function () {
