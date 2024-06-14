@@ -21,6 +21,7 @@ Vue.createApp({
             } catch (error) {
                 console.error("Error catching creatures:", error);
             }
+            console.log(creatures_data);
         }
     },
     created: function () {

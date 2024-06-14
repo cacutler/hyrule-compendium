@@ -13,12 +13,13 @@
   <div id="app">
     <h1>titleh1</h1>
     <div id="container">
-      <div v-for="item in zelda_creatures">
-        <img src="item.image">
+      <div class="item" v-for="item in zelda_creatures">
+        <img class="image" :src=item.image_url>
         <div>
-          <p>item.name</p>
-          <p>item.id</p>
+          <p>{{item.name}}</p>
+          <p>{{item.id}}</p>
         </div>
+        <!-- <p>{{item}}</p> -->
       </div>
     </div>
 
