@@ -12,10 +12,16 @@
       <h1>{{ titleh1 }}</h1>
       <div class="header">
         <p class="title">Zelda Creatures</p>
-        <br />
-        <p class="name" v-for="creature in zelda_creatures">
-          {{ creature.name }}
+
         </p>
+      </div>
+
+      <div class="container"  v-for="creature in zelda_creatures">
+        <br />
+        <p class="name">
+          {{ creature.name }} </p>
+        <p class="id">
+          {{ creature.id }} </p>
       </div>
     </div>
     <script src="app.js"></script>
