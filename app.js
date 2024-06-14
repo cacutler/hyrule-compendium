@@ -1,15 +1,38 @@
-let URL = 'https://botw-compendium.herokuapp.com/api/v3/compendium/entry/';
-
-
+const URL = "https://botw-compendium.herokuapp.com/api/v3/compendium/category";
 Vue.createApp({
-    data() {
-      return {
-        titleh1: "Template",
-      };
+  data: function () {
+    return {
+      zelda_creatures: [],
+      titleh1: "Hyrule Compendium",
+    };
+  },
+  methods: {
+    getCreatures: async function () {
+      try {
+        let response = await fetch(`${URL}/creatures`);
+        let data = await response.json();
+        console.log(data);
+        let creatures_data = data.data;
+        console.log(creatures_data);
+
+        creatures_data.forEach((creature) => {
+          console.log(creature);
+          this.zelda_creatures.push({
+            image_url: creature.image,
+            name: creature.name,
+            id: creature.id,
+          });
+        });
+        for (let i = 0; i < this.zelda_creatures.length; i++) {
+          console.log(this.zelda_creatures[i].name);
+        }
+      } catch (error) {
+        console.error("Error catching creatures:", error);
+      }
     },
-    methods: {},
-    created: function () {
-      console.log("vue app loaded!");
-    },
-  }).mount("#app");
-  
+  },
+  created: function () {
+    console.log("app loaded");
+    this.getCreatures();
+  },
+}).mount("#app");

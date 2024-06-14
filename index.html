@@ -9,8 +9,14 @@
   </head>
   <body>
     <div id="app">
-        <h1>{{ titleh1 }}</h1>
-
+      <h1>{{ titleh1 }}</h1>
+      <div class="header">
+        <p class="title">Zelda Creatures</p>
+        <br />
+        <p class="name" v-for="creature in zelda_creatures">
+          {{ creature.name }}
+        </p>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
