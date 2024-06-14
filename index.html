@@ -26,6 +26,12 @@
           <!-- <p>{{item}}</p> -->
         </div>
       </div>
+
+      <div class="creature-container" v-for="creature in zelda_creatures">
+        <br />
+        <p class="name">{{ creature.name }}</p>
+        <p class="id">{{ creature.id }}</p>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
