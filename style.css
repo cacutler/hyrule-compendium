@@ -7,7 +7,6 @@
     display: flex;
     gap: 1rem;
     width: 200px;
-    /* flex-direction: row; */
 }
 .image{
     width: 100px;
