@@ -19,7 +19,7 @@ Vue.createApp({
             } catch (error) {
                 console.error("Error catching creatures:", error);
             }
-        },
+        }
     },
     created: function () {
         console.log("app loaded");
