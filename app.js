@@ -3,7 +3,7 @@ Vue.createApp({
   data: function () {
     return {
       zelda_creatures: [],
-      showCreatures: false,
+      showCreatures: true,
       showEnemies: false,
     };
   },
@@ -23,11 +23,11 @@ Vue.createApp({
             id: creature.id,
           });
         });
-        console.log(this.zelda_creatures);
+        // console.log(this.zelda_creatures);
       } catch (error) {
         console.error("Error catching creatures:", error);
       }
-      console.log(creatures_data);
+      //   console.log(creatures_data);
     },
   },
   created: function () {

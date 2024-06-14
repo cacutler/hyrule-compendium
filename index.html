@@ -13,7 +13,7 @@
       <h1>Hyrule Compendium</h1>
       <div id="header">
         <button v-on:click="showCreatures = !showCreatures">Creatures</button>
-        <button v-on:click="showEnemies = !showEnemies">Enemies</button>
+        <button   v-on:click="showEnemies = !showEnemies">Enemies</button>
       </div>
 
       <div id="container">
@@ -26,13 +26,8 @@
           <!-- <p>{{item}}</p> -->
         </div>
       </div>
-
-      <div class="creature-container" v-for="creature in zelda_creatures">
-        <br />
-        <p class="name">{{ creature.name }}</p>
-        <p class="id">{{ creature.id }}</p>
-      </div>
     </div>
     <script src="app.js"></script>
   </body>
+</html>
 </html>
