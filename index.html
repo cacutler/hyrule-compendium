@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Vue BoilerPlate</title>
   </head>
@@ -12,11 +12,11 @@
       <h1>Hyrule Compendium</h1>
       <div id="header">
         <button v-on:click="showCreatures = !showCreatures">Creatures</button>
-        <button   v-on:click="showEnemies = !showEnemies">Enemies</button>
+        <button v-on:click="showEnemies = !showEnemies">Enemies</button>
       </div>
       <div id="container">
         <div class="item" v-for="item in zelda_creatures" v-if="showCreatures">
-          <img class="image" :src="item.image_url" />
+          <img class="image" :src="item.image_url">
           <div>
             <p>{{item.name}}</p>
             <p>{{item.id}}</p>
