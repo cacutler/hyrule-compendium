@@ -3,7 +3,6 @@ Vue.createApp({
   data: function () {
     return {
       zelda_creatures: [],
-      titleh1: "Hyrule Compendium",
     };
   },
   methods: {
@@ -14,7 +13,6 @@ Vue.createApp({
         console.log(data);
         let creatures_data = data.data;
         console.log(creatures_data);
-
         creatures_data.forEach((creature) => {
           console.log(creature);
           this.zelda_creatures.push({
@@ -23,12 +21,11 @@ Vue.createApp({
             id: creature.id,
           });
         });
-        for (let i = 0; i < this.zelda_creatures.length; i++) {
-          console.log(this.zelda_creatures[i].name);
-        }
+        console.log(this.zelda_creatures);
       } catch (error) {
         console.error("Error catching creatures:", error);
       }
+      console.log(creatures_data);
     },
   },
   created: function () {

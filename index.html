@@ -7,15 +7,19 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Vue BoilerPlate</title>
   </head>
+
   <body>
     <div id="app">
-      <h1>{{ titleh1 }}</h1>
-      <div class="header">
-        <p class="title">Zelda Creatures</p>
-        <br />
-        <p class="name" v-for="creature in zelda_creatures">
-          {{ creature.name }}
-        </p>
+      <h1>titleh1</h1>
+      <div id="container">
+        <div class="item" v-for="item in zelda_creatures">
+          <img class="image" :src="item.image_url" />
+          <div>
+            <p>{{item.name}}</p>
+            <p>{{item.id}}</p>
+          </div>
+          <!-- <p>{{item}}</p> -->
+        </div>
       </div>
     </div>
     <script src="app.js"></script>
